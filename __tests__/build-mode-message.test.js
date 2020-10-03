@@ -2,9 +2,18 @@ const buildModeMessage = require('../src/helpers/build-mode-message');
 
 describe('buildModeMessage', () => {
   it('returns a mode message', () => {
-    const message = buildModeMessage('solid');
+    const modes = [
+      'solid',
+      'off',
+      'blink',
+      'rainbow',
+      'alert',
+    ];
 
-    expect(message).toEqual({ mode: 'solid' });
+    modes.forEach((mode) => {
+      const message = buildModeMessage(mode);
+      expect(message).toEqual({ mode });
+    });
   });
 
   it('throws an error if passed an invalid mode', () => {
