@@ -1,5 +1,3 @@
-const publish = () => {};
-
 module.exports = {
-  publish,
+  publish: jest.fn(),
 };

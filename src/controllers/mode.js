@@ -1,19 +1,19 @@
 const { publish } = require('../services/mqtt');
-const buildStatusMessage = require('../helpers/build-status-message');
+const buildModeMessage = require('../helpers/build-mode-message');
 
 exports.set = async (req, res) => {
-  const { name, state } = req.params;
+  const { name, mode } = req.params;
   const topic = `status/${name}`;
 
   try {
-    const message = buildStatusMessage(state);
-    await publish(topic, message);
+    const message = buildModeMessage(mode);
+    publish(topic, message);
     res.status(200).json({ topic, message });
   } catch (error) {
     res.status(401).json({
       request: {
         name,
-        state,
+        mode,
       },
       error: error.message,
     });
