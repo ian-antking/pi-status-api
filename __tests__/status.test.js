@@ -34,7 +34,7 @@ describe('GET /status', () => {
     expect(response.body.message).toEqual(expectedMessage);
   });
 
-  it('publishes a working message to correct topic and returns 200', async () => {
+  it('publishes a free message to correct topic and returns 200', async () => {
     const name = faker.name.firstName().toLowerCase();
     const expectedMessage = { color: '(0, 255, 0)', mode: 'solid' };
     const response = await request(app)
