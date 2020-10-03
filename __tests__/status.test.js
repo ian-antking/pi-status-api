@@ -17,4 +17,15 @@ describe('/status', () => {
       mode: 'solid',
     });
   });
+
+  it('returns an error if state is invalid', async () => {
+    const name = faker.name.firstName();
+    const state = 'foo';
+    const response = await request(app)
+      .get(`/status/${name}/${state}`);
+
+    expect(response.status).toBe(401);
+    expect(response.body.error).toBe('invalid argument: state must be free, working or busy');
+    expect(response.body.request).toEqual({ name, state });
+  });
 });

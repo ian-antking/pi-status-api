@@ -5,7 +5,18 @@ exports.set = async (req, res) => {
   const { name } = req.params;
   const { state } = req.params;
   const topic = `status/${name}`;
-  const message = buildStatusMessage(state);
-  await publish(topic, JSON.stringify(message));
-  res.status(200).json({ topic, message });
+
+  try {
+    const message = buildStatusMessage(state);
+    await publish(topic, JSON.stringify(message));
+    res.status(200).json({ topic, message });
+  } catch (error) {
+    res.status(401).json({
+      request: {
+        name,
+        state,
+      },
+      error: error.message,
+    });
+  }
 };
