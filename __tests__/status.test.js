@@ -4,9 +4,9 @@ const app = require('../src/app');
 
 jest.mock('../src/services/mqtt');
 
-describe('/status', () => {
+describe('GET /status', () => {
   it('returns a 200 status, the published message and the topic', async () => {
-    const name = faker.name.firstName();
+    const name = faker.name.firstName().toLowerCase();
     const response = await request(app)
       .get(`/status/${name}/busy`);
 
