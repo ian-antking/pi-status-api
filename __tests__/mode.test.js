@@ -31,4 +31,16 @@ describe('GET /mode/:name/:mode', () => {
       expect(response.body.message).toEqual(expectedMessage);
     });
   });
+
+  it('returns an error if mode is invalid', async () => {
+    const name = faker.name.firstName().toLowerCase();
+    const mode = 'foo';
+    const response = await request(app)
+      .get(`/mode/${name}/${mode}`);
+
+    expect(mqtt.publish).not.toHaveBeenCalled();
+    expect(response.status).toBe(401);
+    expect(response.body.error).toBe('invalid mode: mode must be off, solid, blink, rainbow or alert');
+    expect(response.body.request).toEqual({ name, mode });
+  });
 });
