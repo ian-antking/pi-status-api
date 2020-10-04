@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Pi Status</title>
 </head>
 <body>
-  <h1>Pi Status</h1>
+  <header>
+    <h1>Pi Status</h1>
+  </header>
+  <main>
+    <label for="name">name:</label>  
+    <input type="text" id="name-input" name="name" />
+    <button onclick="setStatus('busy')" >Busy</button>
+    <button onclick="setStatus('working')">Working</button>
+    <button onclick="setStatus('free')">Free</button>
+    <button onclick="setMode('off')">Off</button>
+  </main>
 </body>
+<script src="./index.js"></script>
 </html>
