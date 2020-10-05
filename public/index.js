@@ -1,5 +1,10 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-unused-vars */
+const urlParams = new URLSearchParams(window.location.search);
+const initialName = urlParams.get('name') || '';
+
+document.getElementById('name-input').value = initialName;
+
 function setStatus(status) {
   const name = document.getElementById('name-input').value;
   if (!name) {
