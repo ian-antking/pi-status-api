@@ -4,20 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
   <title>Pi Status</title>
 </head>
 <body>
-  <header>
-    <h1>Pi Status</h1>
-  </header>
-  <main>
-    <label for="name">name:</label>  
-    <input type="text" id="name-input" name="name" />
-    <button onclick="setStatus('busy')" >Busy</button>
-    <button onclick="setStatus('working')">Working</button>
-    <button onclick="setStatus('free')">Free</button>
-    <button onclick="setMode('off')">Off</button>
-  </main>
+  <div id="panel">
+    <header>
+      <h1>Pi Status</h1>
+    </header>
+    <main>
+      <div id="name-field">
+        <label for="name">id:</label>  
+        <input type="text" id="name-input" name="name" placeholder="enter name"/>
+      </div>
+      <button class="status-button" id="busy" onclick="setStatus('busy')" >
+        <p>Busy</p>
+      </button>
+      <button class="status-button" id="working" onclick="setStatus('working')">
+        <p>Working</p>
+      </button>
+      <button class="status-button" id="free" onclick="setStatus('free')">Free</button>
+      <button class="status-button" id="off" onclick="setMode('off')">Off</button>
+    </main>
+  </div>
 </body>
 <script src="./index.js"></script>
 </html>

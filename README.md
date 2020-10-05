@@ -2,7 +2,7 @@
 
 Web app for controlling the [pi-status](https://github.com/ian-antking/pi-status/blob/master/README.md) lights.
 
-## Configureation
+## Configuration
 
 Requires a running mqtt server. The address is loaded from config. This can be stored in a `.env`:
 
@@ -12,7 +12,7 @@ MQTT_BROKER=mqtt://192.168.1.101
 This app assumes that the topic your pi-status light is subscribed to follows the pattern `status/<NAME>`.
 
 ## Installation
-This projucts requires `node.js`. You can install the project from inside the repo with:
+This project requires `node.js`. You can install the project from inside the repo with:
 
 ```
 npm install
