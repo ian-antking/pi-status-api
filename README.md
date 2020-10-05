@@ -29,3 +29,30 @@ The you can access the web interface at `http://localhost:3000`.
 ## Setting you current status
 
 `GET /status/:name/:state`
+
+## Modifying the pi-status light's color scheme
+
+Color schemes for the pi-status light are stored in the colors.js file within the config directory. Two color schemes are provided by default. Additional schemes can be added by modifying the colors object. **RGB format must be used for the colors as other formats will not work.**
+
+```
+const colors = {
+  trafficLights: {
+    free: '(0, 255, 0)',
+    working: '(255, 168, 0)',
+    busy: '(255, 0, 0)',
+  },
+  tritanopia: {
+    free: '(4, 231, 255)',
+    working: '(248, 255, 4)',
+    busy: '(255, 4, 255)',
+  }
+};
+```
+
+To select a color scheme from those stored in colors.js, modify the COLOR_MODE variable of the .env file in the root directory:
+
+```
+COLOR_MODE=tritanopia
+```
+
+If a color scheme is not set then the theme defaults to `trafficLights`.
