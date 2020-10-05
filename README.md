@@ -25,7 +25,3 @@ npm start
 ```
 
 The you can access the web interface at `http://localhost:3000`.
-
-## Setting you current status
-
-`GET /status/:name/:state`
