@@ -1,8 +1,4 @@
-const colors = {
-  free: '(0, 255, 0)',
-  working: '(255, 168, 0)',
-  busy: '(255, 0, 0)',
-};
+const colors = require("../config/colors");
 
 const buildStatusMessage = (state) => {
   const color = colors[state];
