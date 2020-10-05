@@ -9,7 +9,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #eeeeee;
-  background-color: whitesmoke;
+  background-color: #dabfff;
   display: flex;
   flex-flow: column nowrap;
 }
