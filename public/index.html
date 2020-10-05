@@ -8,17 +8,25 @@
   <title>Pi Status</title>
 </head>
 <body>
-  <header>
-    <h1>Pi Status</h1>
-  </header>
-  <main>
-    <label for="name">Name:</label>  
-    <input type="text" id="name-input" name="name" />
-    <button class="status-button" id="busy" onclick="setStatus('busy')" >Busy</button>
-    <button class="status-button" id="working" onclick="setStatus('working')">Working</button>
-    <button class="status-button" id="free" onclick="setStatus('free')">Free</button>
-    <button class="status-button" id="off" onclick="setMode('off')">Off</button>
-  </main>
+  <div id="panel">
+    <header>
+      <h1>Pi Status</h1>
+    </header>
+    <main>
+      <div id="name-field">
+        <label for="name">id:</label>  
+        <input type="text" id="name-input" name="name" placeholder="enter name"/>
+      </div>
+      <button class="status-button" id="busy" onclick="setStatus('busy')" >
+        <p>Busy</p>
+      </button>
+      <button class="status-button" id="working" onclick="setStatus('working')">
+        <p>Working</p>
+      </button>
+      <button class="status-button" id="free" onclick="setStatus('free')">Free</button>
+      <button class="status-button" id="off" onclick="setMode('off')">Off</button>
+    </main>
+  </div>
 </body>
 <script src="./index.js"></script>
 </html>
