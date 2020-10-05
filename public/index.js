@@ -6,7 +6,7 @@ const initialName = urlParams.get('name') || '';
 document.getElementById('name-input').value = initialName;
 
 function setStatus(status) {
-  const name = document.getElementById('name-input').value;
+  const name = document.getElementById('name-input').value.toLowerCase();
   if (!name) {
     window.alert('please enter your name');
   } else {
@@ -15,7 +15,7 @@ function setStatus(status) {
 }
 
 function setMode(mode) {
-  const name = document.getElementById('name-input').value;
+  const name = document.getElementById('name-input').value.toLowerCase();
   if (!name) {
     window.alert('please enter your name');
   } else {
