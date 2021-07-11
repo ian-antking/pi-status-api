@@ -26,6 +26,12 @@ npm start
 
 The you can access the web interface at `http://localhost:3000`.
 
+## Running in docker
+
+```
+docker run -e MQTT_BROKER=<MQTT_BROKER_ADDRESS> -p 3000:3000 pi-status-api
+```
+
 ## Setting you current status
 
 `GET /status/:name/:state`
