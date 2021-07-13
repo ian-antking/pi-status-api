@@ -16,7 +16,7 @@ describe('buildStatusMessage', () => {
     expect(message.color).toBe('(0, 255, 0)');
   });
 
-  it('sets the color to amber, when free', () => {
+  it('sets the color to amber, when working', () => {
     const message = buildStatusMessage('working');
     expect(message.color).toBe('(255, 168, 0)');
   });
