@@ -1,4 +1,4 @@
-const colors = require("../config/colors");
+const colors = require('../config/colors');
 
 const buildStatusMessage = (state) => {
   const color = colors[state];

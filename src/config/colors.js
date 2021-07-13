@@ -8,7 +8,7 @@ const colors = {
     free: '(4, 231, 255)',
     working: '(248, 255, 4)',
     busy: '(255, 4, 255)',
-  }
+  },
 };
 
 module.exports = colors[process.env.COLOR_MODE] || colors.trafficLights;
