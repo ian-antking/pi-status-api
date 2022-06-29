@@ -10,7 +10,7 @@ function setStatus(status) {
   if (!name) {
     window.alert('please enter your name');
   } else {
-    window.fetch(`http://${window.location.host}/status/${name}/${status}`);
+    window.fetch(`${window.location.protocol}//${window.location.host}/status/${name}/${status}`);
   }
 }
 
@@ -19,6 +19,6 @@ function setMode(mode) {
   if (!name) {
     window.alert('please enter your name');
   } else {
-    window.fetch(`http://${window.location.host}/mode/${name}/${mode}`);
+    window.fetch(`${window.location.protocol}//${window.location.host}/mode/${name}/${mode}`);
   }
 }
